@@ -3,9 +3,13 @@ package com.los_super_master.empresa_textil.entity;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
+import javax.persistence.Table;
 
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class })
 @Entity
@@ -13,36 +17,52 @@ import java.util.Date;
 public class Employee {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long idEmployee;
 
     @Column(name = "email", unique = true)
     private String email;
 
+    @OneToOne
+    @JoinColumn (name = "idProfile")
+    private Profile profile;
+
+    @OneToMany(mappedBy = "employee")
+    private List<Transaction> transaction;
+
     @ManyToOne
+    @JoinColumn(name = "idEnterprise")
     private Enterprise enterprise;
 
+    @Enumerated (EnumType.STRING)
+    private Enum_RolName enum_rolName;
+
+    @LastModifiedDate
     private Date updateAt;
+    @CreatedDate
     private Date createdAt;
 
     public Employee(){
 
     }
 
-    public Employee(long id, String email, Enterprise enterprise, Date updateAt, Date createdAt) {
-        this.id = id;
+    public Employee(long idEmployee, String email, Profile profile, List<Transaction> transaction, Enterprise enterprise, Enum_RolName enum_rolName, Date updateAt, Date createdAt) {
+        this.idEmployee = idEmployee;
         this.email = email;
+        this.profile = profile;
+        this.transaction = transaction;
         this.enterprise = enterprise;
+        this.enum_rolName = enum_rolName;
         this.updateAt = updateAt;
         this.createdAt = createdAt;
     }
 
-    public long getId() {
-        return id;
+    public long getIdEmployee() {
+        return idEmployee;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setIdEmployee(long idEmployee) {
+        this.idEmployee = idEmployee;
     }
 
     public String getEmail() {
@@ -53,12 +73,36 @@ public class Employee {
         this.email = email;
     }
 
+    public Profile getProfile() {
+        return profile;
+    }
+
+    public void setProfile(Profile profile) {
+        this.profile = profile;
+    }
+
+    public List<Transaction> getTransaction() {
+        return transaction;
+    }
+
+    public void setTransaction(List<Transaction> transaction) {
+        this.transaction = transaction;
+    }
+
     public Enterprise getEnterprise() {
         return enterprise;
     }
 
     public void setEnterprise(Enterprise enterprise) {
         this.enterprise = enterprise;
+    }
+
+    public Enum_RolName getEnum_rolName() {
+        return enum_rolName;
+    }
+
+    public void setEnum_rolName(Enum_RolName enum_rolName) {
+        this.enum_rolName = enum_rolName;
     }
 
     public Date getUpdateAt() {
