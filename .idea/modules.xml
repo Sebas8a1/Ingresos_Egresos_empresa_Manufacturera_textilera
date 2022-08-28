@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Ingresos_Egresos_empresa_Manufacturera_textilera.iml" filepath="$PROJECT_DIR$/.idea/Ingresos_Egresos_empresa_Manufacturera_textilera.iml" />
-      <module fileurl="file://$PROJECT_DIR$/empresa_textil/empresa_textil.iml" filepath="$PROJECT_DIR$/empresa_textil/empresa_textil.iml" />
-    </modules>
-  </component>
-</project>
