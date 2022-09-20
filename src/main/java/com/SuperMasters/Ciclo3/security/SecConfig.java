@@ -47,6 +47,7 @@ public class SecConfig  extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests()
 				.antMatchers("/empresas**").hasRole("ADMIN")
 				.antMatchers("/empleados**").hasRole("ADMIN")
+				.antMatchers("/","/index","/webpublico").authenticated()
 				.antMatchers("/movimientos**").hasAnyRole("ADMIN","USER")
 				.and()
 				.formLogin().successHandler(customHandler)
