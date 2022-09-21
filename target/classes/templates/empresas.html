@@ -24,9 +24,54 @@ a {
 
     </style>
 </head>
-
 <body>
-<div class="container-fluid"><h1> Lista de Empresas</h1><!--Dibujamos la tabla-->
+<!--
+código para la barra de navegacion
+<div class="container">
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+            <a style="color:black" th:href="@{/empleados}">Ver Empleados</a>
+            </li>
+        </ul>
+            <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a style="color:black" th:href="@{/empresas/new}">Agregar Empresa</a>
+                    </li>
+            </ul>
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a style="color:black" th:href="@{/empleados}">Ver Empleados</a>
+                    </li>
+                </ul>
+                    <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a style="color:black" th:href="@{/movimientos}">Ver Movimientos</a>
+                    </li>
+                    </ul>
+                        <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a style="color:white" class="btntxt" th:href="@{/logout}">Cerrar Sesion</a>
+                    </li>
+        </ul>
+    </div>
+        </div>
+    </nav>
+</div>
+-->
+<div class="container vh-100 d-flex justify-content-center align-item-center">
+    <div class="px-4 py-5 my -1 text center d-flex flex-column">
+        <h1 class="d-flex justify-content-center align-item-center"> Lista de Empresas </h1>
+<div class="container-fluid"><!--Dibujamos la tabla-->
     <p th:inline="text" class="text-right">User: [[${#httpServletRequest.remoteUser}]]</p>
     <table class="table">
         <tr>
@@ -47,24 +92,24 @@ a {
             <td th:text="${empresa.telefono}"></td>
             <td th:text="${empresa.nit}"></td>
             <td>
-                <button class="btn btn-primary" type="button">
-                    <a th:href="@{/empresas/edit/{id}(id=${empresa.id})}">Editar</a>
+                <button type="button" class="btn btn-warning">
+                    <a style="color:black" th:href="@{/empresas/edit/{id}(id=${empresa.id})}">Editar</a>
                 </button>
             </td>
 
             <td>
-                <button class="btn btn-primary" type="button">
-                    <a th:href="@{/empresas/delete/{id}(id=${empresa.id})}">Eliminar</a>
+                <button type="button" class="btn btn-danger">
+                    <a style="color:white" th:href="@{/empresas/delete/{id}(id=${empresa.id})}">Eliminar</a>
                 </button>
             </td>
             <td>
-                <button class="btn btn-primary" type="button">
+                <button class="btn btn-secondary" type="button">
                     <a th:href="@{/empleados/empresa/{id}(id=${empresa.id})}">Empleados</a>
                 </button>
             </td>
 
             <td>
-                <button class="btn btn-primary" type="button">
+                <button class="btn btn-secondary" type="button">
                     <a th:href="@{/movimientos/empresa/{id}(id=${empresa.id})}">Movimientos</a>
                 </button>
             </td>
@@ -75,18 +120,20 @@ a {
             <a th:href="@{/empresas/new}">Agregar Empresa</a>
         </button>
 
-        <button class="btn btn-primary" type="button">
+        <button class="btn btn-secondary" type="button">
             <a th:href="@{/empleados}">Ver Empleados</a>
         </button>
 
-        <button class="btn btn-primary" type="button">
+        <button class="btn btn-secondary" type="button">
             <a th:href="@{/movimientos}">Ver Movimientos</a>
         </button>
 
-        <button class="btn btn-primary float-right" type="button">
-            <a th:href="@{/logout}">Cerrar Sesion</a>
+        <button class="btn btn-warning float-right" type="button">
+            <a style="color:white" class="btntxt" th:href="@{/logout}">Cerrar Sesion</a>
         </button>
     </td>
+</div>
+    </div>
 </div>
 <script th:inline="javascript">
       window.onload=function(){
