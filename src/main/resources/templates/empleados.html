@@ -27,7 +27,9 @@
 </head>
 
 <body>
-<div class="container-fluid"><h1> Lista de Empleados</h1><!--Dibujamos la tabla-->
+<div class="container vh-100 d-flex justify-content-center align-item-center">
+    <div class="px-4 py-5 my -1 text center d-flex flex-column">
+<div class="container-fluid"><h1 class="d-flex justify-content-center align-item-center"> Lista de Empleados </h1><!--Dibujamos la tabla-->
     <table class="table">
         <tr>
             <th>ID</th>
@@ -47,13 +49,13 @@
             <td th:text="${empleado.rol}"></td>
             <td><a th:href="@{/movimientos/empleado/{id}(id=${empleado.id})}" class="btn btn-primary">Ver</a></td>
             <td>
-                <button class="btn btn-primary" >
-                    <a th:href="@{/empleados/edit/{id}(id=${empleado.id})}">Editar</a>
+                <button class="btn btn-warning" >
+                    <a style="color:black" th:href="@{/empleados/edit/{id}(id=${empleado.id})}">Editar</a>
                 </button>
             </td>
             <td>
-                <button class="btn btn-primary" >
-                    <a th:href="@{/empleados/delete/{id}(id=${empleado.id})}">Eliminar</a>
+                <button class="btn btn-danger" >
+                    <a style="color:white" th:href="@{/empleados/delete/{id}(id=${empleado.id})}">Eliminar</a>
                 </button>
             </td>
         </tr>
@@ -63,14 +65,16 @@
             <a th:href="@{/empleados/new}">Agregar Empleado</a>
         </button>
 
-        <button class="btn btn-primary" t>
+        <button class="btn btn-secondary" t>
             <a th:href="@{/empresas}">Ver Empresas</a>
         </button>
 
-        <button class="btn btn-primary" >
+        <button class="btn btn-secondary" >
             <a th:href="@{/movimientos}">Ver Movimientos</a>
         </button>
     </td>
+</div>
+    </div>
 </div>
 <script th:inline="javascript">
       window.onload=function(){

@@ -23,8 +23,10 @@
 </head>
 
 <body>
+<div class="container vh-100 d-flex justify-content-center align-item-center">
+    <div class="px-4 py-5 my -1 text center d-flex flex-column">
 <div class="container">
-    <h1 class="header"> Lista de Movimientos</h1>
+    <h1 class="header d-flex justify-content-center align-item-center"> Lista de Movimientos</h1>
     <table class="table responsive-table">
         <thead>
         <tr>
@@ -45,13 +47,13 @@
             <td th:text="${movimiento.empleado.nombre}"></td>
             <td th:text="${#dates.format(movimiento.updateAt, 'dd/MM/yyyy HH:mm')}"></td>
             <td>
-                <button  type="button">
-                    <a class="btntxt" th:href="@{/movimientos/edit/{id}(id=${movimiento.id})}">Editar</a>
+                <button  type="button" class="btn btn-warning">
+                    <a style="color:black" th:href="@{/movimientos/edit/{id}(id=${movimiento.id})}">Editar</a>
                 </button>
             </td>
             <td>
-                <button  type="button">
-                    <a style="color:black" class="btntxt" th:href="@{/movimientos/delete/{id}(id=${movimiento.id})}">Eliminar</a>
+                <button  type="button" class="btn btn-danger">
+                    <a style="color:white" th:href="@{/movimientos/delete/{id}(id=${movimiento.id})}">Eliminar</a>
                 </button>
             </td>
         </tr>
@@ -59,19 +61,21 @@
     </table>
     <td>
         <div class="footerbtn">
-        <button  class="btn btn-secondary">
-            <a style="color:black" class="btntxt" th:href="@{/movimientos/new}">Agregar Movimiento</a>
+        <button  class="btn btn-primary">
+            <a style="color:white" class="btntxt" th:href="@{/movimientos/new}">Agregar Movimiento</a>
         </button>
 
-        <button  class="btn btn-primary">
+        <button  class="btn btn-secondary">
             <a style="color:white" class="btntxt" th:href="@{/empresas}">Ver Empresas</a>
         </button>
 
-        <button class="btn btn-warning">
-            <a style="color:black" class="btntxt" th:href="@{/empleados}">Ver Empleados</a>
+        <button class="btn btn-secondary">
+            <a style="color:white" class="btntxt" th:href="@{/empleados}">Ver Empleados</a>
         </button>
         </div>
     </td>
+</div>
+    </div>
 </div>
 <script th:inline="javascript">
       window.onload=function(){

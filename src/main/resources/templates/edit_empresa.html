@@ -20,9 +20,11 @@
 </head>
 
 <body>
+<div class="container vh-100 d-flex justify-content-center align-item-center">
+    <div class="px-4 py-5 my -1 text center d-flex flex-column">
 <div class="container-fluid">
     <h1> Edite los datos de esta empresa</h1>
-    <form action="#" th:method="patch" th:action="@{/empresas/update}" th:object="${empresa}">
+    <form class="d-flex flex-column gap-3 aling-items-center" action="#" th:method="patch" th:action="@{/empresas/update}" th:object="${empresa}">
         <div class="form-group">
             <label class="control-label" for="id">Id:</label>
             <input class="form-control" id="id" readonly required="required" th:field="*{id}" type="text">
@@ -46,6 +48,8 @@
         </div>
     </form>
 
+</div>
+    </div>
 </div>
 </body>
 
