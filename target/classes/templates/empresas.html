@@ -24,19 +24,19 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <!--<a th:inline="text" class="navbar-brand" href="#">User: [[${#httpServletRequest.remoteUser}]]</a>-->
         <!--<p th:inline="text" class="text-right">User: [[${#httpServletRequest.remoteUser}]]</p>-->
-        <img class="img-fluid" src="/imgs/lg_SuperMasters3.png" height="100" width="100" />
+        <!--<img class="img-fluid" src="/imgs/lg_SuperMasters3.png" height="100" width="100" />
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-        </button>
+        </button>-->
+        <div class="logo-bar" id="navbarSupportedContent">
+            <a class="navbar-brand" href="#"><i class="fa-brands fa-uncharted">    Super Masters</i></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
 
         <div class="navbar-collapse collapse show" id="navbarSupportedContent" style="">
             <ul class="navbar-nav mr-auto">
-                <!--<li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>-->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Menu
@@ -55,7 +55,7 @@
         </div>
     </nav>
     <!--<p th:inline="text" class="text-right">User: [[${#httpServletRequest.remoteUser}]]</p>-->
-    <table class="table table-dark table-bordered">
+    <table class="table table-light table-bordered text-center table-hover shadow p-3 mb-5 bg-white rounded">
         <thead>
         <tr>
             <th>ID</th>
