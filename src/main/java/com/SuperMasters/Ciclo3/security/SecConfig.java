@@ -45,10 +45,10 @@ public class SecConfig  extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-				.antMatchers("/empresas**").hasRole("ADMIN")
-				.antMatchers("/empleados**").hasRole("ADMIN")
+				.antMatchers("/empresas/**").hasRole("ADMIN")
+				.antMatchers("/empleados/**").hasRole("ADMIN")
 				.antMatchers("/","/index","/webpublico").authenticated()
-				.antMatchers("/movimientos**").hasAnyRole("ADMIN","USER")
+				.antMatchers("/movimientos/**").hasAnyRole("ADMIN","USER")
 				.and()
 				.formLogin().successHandler(customHandler)
 				.and()
