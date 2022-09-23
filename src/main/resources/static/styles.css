@@ -1,0 +1,69 @@
+
+
+.navbar {
+    padding-left: 5px;
+}
+
+.menu-sg {
+    justify-content: space-between;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255,255,255);
+}
+
+.btn {
+    background-color: white;
+    color: black;
+    border: 1px solid white;
+}
+
+.btn:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid white;
+}
+
+a {
+    color:black;
+    text-decoration: none;
+}
+
+a:hover {
+    text-shadow: 1px 1px 2px pink;
+    color:#7DF9FF;
+}
+
+.fa-trash-can {
+    color:red;
+}
+
+.fa-trash-can:hover {
+    color:black;
+}
+
+.fa-users {
+    color:green
+}
+
+.fa-users:hover {
+    color:black;
+}
+
+.fa-file-pen {
+    color:#3f51b5;
+}
+
+.fa-file-pen:hover {
+    color:black;
+}
+
+.fa-sack-dollar {
+    color:#6e5045;
+}
+
+.fa-sack-dollar:hover {
+    color:black;
+}
+
+
