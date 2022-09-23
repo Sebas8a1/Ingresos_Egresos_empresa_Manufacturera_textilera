@@ -3,18 +3,19 @@
 <head>
     <title>Empleados</title>
 
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
     <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet">
-    <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
     <script crossorigin="anonymous"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://kit.fontawesome.com/8362d0f2b1.js" crossorigin="anonymous"></script>
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+
 </head>
 
 <body>
@@ -42,8 +43,8 @@
                         Menu
                     </a>
                     <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" th:href="@{/empresas/new}">Agregar nueva Empresa</a>
-                        <a class="dropdown-item" th:href="@{/empleados}">Ir a lista de Empleados</a>
+                        <a class="dropdown-item" th:href="@{/empleados/new}">Agregar nuevo Empleado</a>
+                        <a class="dropdown-item" th:href="@{/empresas}">Ir a lista de Empresas</a>
                         <a class="dropdown-item" th:href="@{/movimientos}">Ir a lista de Movimientos</a>
                     </div>
                 </li>
@@ -76,20 +77,22 @@
             <td th:text="${empleado.correo}"></td>
             <td th:text="${empleado.empresa.nombre}"></td>
             <td th:text="${empleado.rol}"></td>
-            <td><a th:href="@{/movimientos/empleado/{id}(id=${empleado.id})}" class="btn btn-primary">Ver</a></td>
-            <td>
-                <button class="btn btn-warning" >
-                    <a style="color:black" th:href="@{/empleados/edit/{id}(id=${empleado.id})}">Editar</a>
-                </button>
+            <td class="text-center">
+
+                <a th:href="@{/movimientos/empleado/{id}(id=${empleado.id})}" > <i class="fa-solid fa-money-bill-transfer"></i></a></td>
+            <td class="text-center">
+
+                    <a  th:href="@{/empleados/edit/{id}(id=${empleado.id})}"><i class="fa-sharp fa-solid fa-file-pen icon-border"></i> </a>
+
             </td>
-            <td>
-                <button class="btn btn-danger" >
-                    <a style="color:white" th:href="@{/empleados/delete/{id}(id=${empleado.id})}">Eliminar</a>
-                </button>
+            <td class="text-center">
+
+                    <a  th:href="@{/empleados/delete/{id}(id=${empleado.id})}"><i class="fa-sharp fa-solid fa-trash-can icon-border"></i></a>
+
             </td>
         </tr>
     </table>
-    <td>
+    <!----<td>
         <button class="btn btn-primary" >
             <a th:href="@{/empleados/new}">Agregar Empleado</a>
         </button>
@@ -101,7 +104,7 @@
         <button class="btn btn-secondary" >
             <a th:href="@{/movimientos}">Ver Movimientos</a>
         </button>
-    </td>
+    </td>--->
 </div>
     </div>
 </div>
