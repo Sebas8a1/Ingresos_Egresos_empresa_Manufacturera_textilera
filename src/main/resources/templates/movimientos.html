@@ -26,7 +26,45 @@
 <div class="container vh-100 d-flex justify-content-center align-item-center">
     <div class="px-4 py-5 my -1 text center d-flex flex-column">
 <div class="container">
+
     <h1 class="header d-flex justify-content-center align-item-center"> Lista de Movimientos</h1>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <!--<a th:inline="text" class="navbar-brand" href="#">User: [[${#httpServletRequest.remoteUser}]]</a>-->
+        <!--<p th:inline="text" class="text-right">User: [[${#httpServletRequest.remoteUser}]]</p>-->
+        <!--<img class="img-fluid" src="/imgs/lg_SuperMasters3.png" height="100" width="100" />
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>-->
+        <div class="logo-bar" >
+            <a class="navbar-brand" href="#"><i class="fa-brands fa-uncharted">    Super Masters</i></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+
+        <div class="navbar-collapse collapse menu-sg show" id="navbarSupportedContent" style="">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Menu
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" th:href="@{/empresas/new}">Agregar nueva Empresa</a>
+                        <a class="dropdown-item" th:href="@{/empleados}">Ir a lista de Empleados</a>
+                        <a class="dropdown-item" th:href="@{/movimientos}">Ir a lista de Movimientos</a>
+                    </div>
+                </li>
+
+            </ul>
+            <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/logout}" style="font-size: small;"><i class="fa-solid fa-right-from-bracket"> Sign Out</i></a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
     <table class="table responsive-table">
         <thead>
         <tr>
