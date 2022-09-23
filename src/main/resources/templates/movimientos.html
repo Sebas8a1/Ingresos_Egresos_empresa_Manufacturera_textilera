@@ -17,7 +17,6 @@
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script src="https://kit.fontawesome.com/ddf16369f8.js" crossorigin="anonymous"></script>
-    <link href="styles.css" rel="stylesheet" type="text/css" />
     <style>
 
     </style>
@@ -28,7 +27,7 @@
     <div class="px-4 py-5 my -1 text center d-flex flex-column">
 <div class="container">
     <h1 class="header d-flex justify-content-center align-item-center"> Lista de Movimientos</h1>
-    <table class="table table-light table-bordered text-center table-hover shadow p-3 mb-5 bg-white rounded">
+    <table class="table responsive-table">
         <thead>
         <tr>
             <th>ID</th>
@@ -49,12 +48,12 @@
             <td th:text="${#dates.format(movimiento.updateAt, 'dd/MM/yyyy HH:mm')}"></td>
             <td>
                 <button  type="button" class="btn btn-warning">
-                    <a  th:href="@{/movimientos/edit/{id}(id=${movimiento.id})}">Editar</a>
+                    <a style="color:black" th:href="@{/movimientos/edit/{id}(id=${movimiento.id})}">Editar</a>
                 </button>
             </td>
             <td>
                 <button  type="button" class="btn btn-danger">
-                    <a  th:href="@{/movimientos/delete/{id}(id=${movimiento.id})}">Eliminar</a>
+                    <a style="color:white" th:href="@{/movimientos/delete/{id}(id=${movimiento.id})}">Eliminar</a>
                 </button>
             </td>
         </tr>
@@ -63,15 +62,15 @@
     <td>
         <div class="footerbtn">
         <button  class="btn btn-primary">
-            <a  class="btntxt" th:href="@{/movimientos/new}">Agregar Movimiento</a>
+            <a style="color:white" class="btntxt" th:href="@{/movimientos/new}">Agregar Movimiento</a>
         </button>
 
         <button  class="btn btn-secondary">
-            <a  class="btntxt" th:href="@{/empresas}">Ver Empresas</a>
+            <a style="color:white" class="btntxt" th:href="@{/empresas}">Ver Empresas</a>
         </button>
 
         <button class="btn btn-secondary">
-            <a class="btntxt" th:href="@{/empleados}">Ver Empleados</a>
+            <a style="color:white" class="btntxt" th:href="@{/empleados}">Ver Empleados</a>
         </button>
         </div>
     </td>

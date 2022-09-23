@@ -15,9 +15,14 @@
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-    <link href="styles.css" rel="stylesheet" type="text/css" />
     <style>
-
+    a{
+    color:white;
+    }
+    a:hover {
+    color: black;
+    text-decoration:none;
+    }
 </style>
 </head>
 
@@ -25,7 +30,7 @@
 <div class="container vh-100 d-flex justify-content-center align-item-center">
     <div class="px-4 py-5 my -1 text center d-flex flex-column">
 <div class="container-fluid"><h1 class="d-flex justify-content-center align-item-center"> Lista de Empleados </h1><!--Dibujamos la tabla-->
-    <table class="table table-light table-bordered text-center table-hover shadow p-3 mb-5 bg-white rounded">
+    <table class="table">
         <tr>
             <th>ID</th>
             <th>Nombre</th>
@@ -50,7 +55,7 @@
             </td>
             <td>
                 <button class="btn btn-danger" >
-                    <a  th:href="@{/empleados/delete/{id}(id=${empleado.id})}">Eliminar</a>
+                    <a style="color:white" th:href="@{/empleados/delete/{id}(id=${empleado.id})}">Eliminar</a>
                 </button>
             </td>
         </tr>
