@@ -3,33 +3,63 @@
 <head>
     <title>Empleados</title>
 
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
     <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet">
-    <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
     <script crossorigin="anonymous"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-    <style>
-    a{
-    color:white;
-    }
-    a:hover {
-    color: black;
-    text-decoration:none;
-    }
-</style>
+    <script src="https://kit.fontawesome.com/8362d0f2b1.js" crossorigin="anonymous"></script>
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+
 </head>
 
 <body>
 <div class="container vh-100 d-flex justify-content-center align-item-center">
     <div class="px-4 py-5 my -1 text center d-flex flex-column">
 <div class="container-fluid"><h1 class="d-flex justify-content-center align-item-center"> Lista de Empleados </h1><!--Dibujamos la tabla-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <!--<a th:inline="text" class="navbar-brand" href="#">User: [[${#httpServletRequest.remoteUser}]]</a>-->
+        <!--<p th:inline="text" class="text-right">User: [[${#httpServletRequest.remoteUser}]]</p>-->
+        <!--<img class="img-fluid" src="/imgs/lg_SuperMasters3.png" height="100" width="100" />
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>-->
+        <div class="logo-bar" >
+            <a class="navbar-brand" href="#"><i class="fa-brands fa-uncharted">    Super Masters</i></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+
+        <div class="navbar-collapse collapse menu-sg show" id="navbarSupportedContent" style="">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Menu
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" th:href="@{/empleados/new}">Agregar nuevo Empleado</a>
+                        <a class="dropdown-item" th:href="@{/empresas}">Ir a lista de Empresas</a>
+                        <a class="dropdown-item" th:href="@{/movimientos}">Ir a lista de Movimientos</a>
+                    </div>
+                </li>
+
+            </ul>
+            <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/logout}" style="font-size: small;"><i class="fa-solid fa-right-from-bracket"> Sign Out</i></a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
     <table class="table">
         <tr>
             <th>ID</th>
@@ -47,20 +77,22 @@
             <td th:text="${empleado.correo}"></td>
             <td th:text="${empleado.empresa.nombre}"></td>
             <td th:text="${empleado.rol}"></td>
-            <td><a th:href="@{/movimientos/empleado/{id}(id=${empleado.id})}" class="btn btn-primary">Ver</a></td>
-            <td>
-                <button class="btn btn-warning" >
-                    <a style="color:black" th:href="@{/empleados/edit/{id}(id=${empleado.id})}">Editar</a>
-                </button>
+            <td class="text-center">
+
+                <a th:href="@{/movimientos/empleado/{id}(id=${empleado.id})}" > <i class="fa-solid fa-money-bill-transfer"></i></a></td>
+            <td class="text-center">
+
+                    <a  th:href="@{/empleados/edit/{id}(id=${empleado.id})}"><i class="fa-sharp fa-solid fa-file-pen icon-border"></i> </a>
+
             </td>
-            <td>
-                <button class="btn btn-danger" >
-                    <a style="color:white" th:href="@{/empleados/delete/{id}(id=${empleado.id})}">Eliminar</a>
-                </button>
+            <td class="text-center">
+
+                    <a  th:href="@{/empleados/delete/{id}(id=${empleado.id})}"><i class="fa-sharp fa-solid fa-trash-can icon-border"></i></a>
+
             </td>
         </tr>
     </table>
-    <td>
+    <!----<td>
         <button class="btn btn-primary" >
             <a th:href="@{/empleados/new}">Agregar Empleado</a>
         </button>
@@ -72,7 +104,7 @@
         <button class="btn btn-secondary" >
             <a th:href="@{/movimientos}">Ver Movimientos</a>
         </button>
-    </td>
+    </td>--->
 </div>
     </div>
 </div>
