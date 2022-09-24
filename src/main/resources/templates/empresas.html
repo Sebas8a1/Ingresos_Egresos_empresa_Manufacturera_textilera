@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <title>Empresas</title>
 
@@ -54,7 +54,9 @@
             <ul class="navbar-nav mr-auto">
 
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/logout}" style="font-size: small;"><i class="fa-solid fa-right-from-bracket"> Sign Out</i></a>
+                    <form th:action="@{/logout}" method="post">
+                        <button type="submit" class="nav-link btnSO"><i class="fa-solid fa-right-from-bracket"> Sign Out</i></button>
+                    </form>
                 </li>
             </ul>
 

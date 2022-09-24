@@ -51,10 +51,14 @@ public class SecConfig  extends WebSecurityConfigurerAdapter {
 				.antMatchers("/movimientos**").hasAnyRole("ADMIN","USER")
 				.and()
 				.formLogin().successHandler(customHandler)
+				.loginPage("/login")
+				.permitAll()
 				.and()
 				.exceptionHandling().accessDeniedPage("/accessDenied")
 				.and()
-				.logout().permitAll()
+				.logout()
+				.logoutUrl("/logout")
+				.permitAll()
 				.and()
 				.csrf();
 	}

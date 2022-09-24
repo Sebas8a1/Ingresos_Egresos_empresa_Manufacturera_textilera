@@ -82,11 +82,20 @@ a:hover {
     color:black;
 }
 
-
-
 .fa-check:hover{
    color:black;
 }
 
+.fa-right-from-bracket{
+    color:white;
+    font-size: small;
+}
+
+.btnSO {
+    background-color: transparent;
+    color: white;
+    border: 1px solid #212529;
+    padding: 1px;
+}
 
 
